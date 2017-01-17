@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Router, IndexRoute, Link } from 'react-router'
+import { Router, IndexRoute, Link } from 'react-router';
+import $ from 'jquery';
 
 class App extends Component {
   render() {
