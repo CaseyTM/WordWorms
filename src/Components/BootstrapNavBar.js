@@ -19,7 +19,7 @@ class BootstrapNavBar extends Component{
 							<div className="form-group">
 								<div className="input-group">
 									<div className="input-group-addon">Search</div>
-									<input className="form-control" placeholder="Search For Word" type="text" />
+									<input className="form-control" placeholder="Search For A Word" type="text" />
 								</div>
 							</div>
 
