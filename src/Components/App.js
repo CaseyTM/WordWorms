@@ -4,6 +4,9 @@ import React, { Component } from 'react';
 //bring in nav bars
 import BootstrapNavBar from './BootstrapNavBar.js';
 import SideNavBar from './SideNavBar.js';
+import Etymology from './Etymology.js';
+import WordOfTheDay from './WordOfTheDay.js';
+import RandomQuote from './RandomQuote.js';
 
 
 // We need to bring in bootstrap as well as jquery
@@ -16,7 +19,6 @@ class App extends Component {
   render() {
     return (
       <div className="container-fluid">
-
         <BootstrapNavBar />
        	<div className="row">
 	        <SideNavBar />     
