@@ -20,25 +20,15 @@ import $ from 'jquery';
 class App extends Component {
   constructor(props){
     super(props);
-    this.state = {
-      searchText: ""
-    }
     this.handleSearch = this.handleSearch.bind(this)
 
   }
   handleSearch(wordToDisplay) {
-    this.setState({
-      searchText: wordToDisplay
-    })
+    
     this.props.router.push('/search/'+encodeURI(wordToDisplay));
-    // this.setState({
-    //   word: wordToDisplay
-    // })
+    
   }
 
-  componentDidMount() {
-    console.log(this.props.router);
-  }
 
   render() {
     return (

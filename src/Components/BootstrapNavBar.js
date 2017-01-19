@@ -16,7 +16,7 @@ class BootstrapNavBar extends Component{
 	handleSearchSubmit(event){
 		event.preventDefault();
 		var userInput = event.target[0].value;
-		{/*need to pass word to app.js and give it userInput */}
+		// need to pass word to app.js and give it userInput 
 		this.props.handleSearchAppFunction(userInput)
 	}
 
@@ -33,7 +33,7 @@ class BootstrapNavBar extends Component{
 						<form onSubmit={this.handleSearchSubmit} className="navbar-right col-sm-4 form-inline">
 							<div className="form-group">
 								<div className="input-group">
-									<div className="input-group-addon">Search</div>
+									<div className="input-group-addon">Learn Something!</div>
 									<input className="form-control" placeholder="Search For A Word" type="text" />
 								</div>
 							</div>
