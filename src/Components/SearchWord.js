@@ -1,23 +1,75 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 
+// var newDefinitionInfo = ""
+// var newEtymologyInfo = ""
+
 class SearchWord extends Component{
 	constructor(props){
-		super(props)
+		super(props)	
+		this.state = {
+			definition: "",
+			etymology: ""
+
+		}	
+
 	}
+
+
+	componentDidMount() {
+		var word = this.props.params.id;
+		var url = "http://wasjustthinking.com:5000/?word="+word
+		var self = this 
+		
+				
+
+		
+			
+		$.getJSON(url, (wordApiResponse) =>{
+			//grab the first definition and etymology response as it is usually teh most commonly used term
+			var newDefinitionInfo = wordApiResponse.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]
+			
+			var newEtymologyInfo = wordApiResponse.results[0].lexicalEntries[0].entries[0].etymologies
+
+			// console.log(wordApiResponse)
+			// console.log(newEtymologyInfo)
+
+			self.setState({
+				definition: newDefinitionInfo,
+				etymology: newEtymologyInfo
+			})
+
+
+
+		})	
+
+
+	}	
+
 	
 	render(){
 		var word = this.props.params.id;
-		// need to generate a URL based on the word
-		var url = "http://wasjustthinking.com:5000/?word="+word
 
-		$.getJSON(url, (wordApiResponse) =>{
-			console.log(wordApiResponse)
-		})
+
+
+		console.log(this.state.definition)
+		console.log(this.state.etymology)	
+		// need to generate a URL based on the word
+		
 		return(
 			<div>
 				<h1> Word: </h1>
-				<p>{word} </p>
+				<p>{this.word} </p>
+
+				<h1>Definition: </h1>
+				<p>{this.state.definition} </p>				
+
+				<h1> Etymology: </h1>
+				<p>{this.state.etymology} </p>
+
+
+				<button className="btn btn-success">Add This Word To One of my Lists </button>
+
 			</div>
 		)
 	}
