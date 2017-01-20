@@ -13,7 +13,11 @@ class SearchWord extends Component{
 			word: ""
 
 		}	
+		this.addWordToList = this.addWordToList.bind(this);
+	}
 
+	addWordToList(){
+		console.log(this.state.word)
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -102,7 +106,7 @@ class SearchWord extends Component{
 				<p>{this.state.etymology} </p>
 
 
-				<button className="btn btn-success">Add This Word To One of my Lists </button>
+				<button onClick={this.addWordToList} className="btn btn-success">Add This Word To One of my Lists </button>
 
 			</div>
 		)
