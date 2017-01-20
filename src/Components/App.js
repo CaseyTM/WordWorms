@@ -20,13 +20,11 @@ import $ from 'jquery';
 class App extends Component {
   constructor(props){
     super(props);
-    this.handleSearch = this.handleSearch.bind(this)
-
+    this.handleSearch = this.handleSearch.bind(this)    
   }
+
   handleSearch(wordToDisplay) {
-    
-    this.props.router.push('/search/'+encodeURI(wordToDisplay));
-    
+    this.props.router.push('/search/'+encodeURI(wordToDisplay));      
   }
 
 
