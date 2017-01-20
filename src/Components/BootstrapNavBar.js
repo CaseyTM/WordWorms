@@ -18,18 +18,18 @@ class BootstrapNavBar extends Component{
 		var userInput = event.target[0].value;
 
 		//create a url for the JSON Request
-		
-		// need to pass word to app.js and give it userInput 
+
+		// need to pass word to app.js and give it userInput
 		this.props.handleSearchAppFunction(userInput)
 	}
 
 
 	render(){
 		return(
-			
+
 			<div className="row">
-				<div className="col-sm-12">			
-					<nav className="navbar navbar-default">
+				<div className="col-sm-12">
+					<nav className="navbar navbar-default ww-nav">
 						<img src="http://www.clipartkid.com/images/8/cute-bookworm-svg-cut-file-cute-bookworm-clipart-free-svgs-free-svg-LMlbUC-clipart.png" />
 
 
@@ -48,7 +48,7 @@ class BootstrapNavBar extends Component{
 					</nav>
 				</div>
 			</div>
-			
+
 		)
 	}
 }

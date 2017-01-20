@@ -48,3 +48,32 @@
 
 
 }
+
+.btn{
+  border-radius: 18px;
+  background-color: #768c75;
+  border: none;
+  transition: all 0.3s ease-in;
+
+}
+
+.sideNavMenu, .ww-nav{
+  background-color: #e3eae3;
+}
+
+.btn-primary:hover{
+  background-color: #EE9C5D;
+}
+
+.btn-success:hover{
+  background-color: #8cbbdb;
+}
+
+nav > a:hover{
+  text-decoration: none;
+}
+
+nav img{
+  margin-left: 35px;
+  margin-top: 3px;
+}
