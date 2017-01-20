@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import WordOfTheDay from './WordOfTheDay.js'
 import RandomQuote from './RandomQuote.js';
 import Etymology from './Etymology.js';
+import QuizMe from './QuizMe.js';
 
 
 class Home extends Component{
@@ -14,9 +15,8 @@ class Home extends Component{
 				<WordOfTheDay />
 				<Etymology />
 				<RandomQuote />
-
-			</div>
-			
+					
+			</div>			
 		)
 	}
 }
