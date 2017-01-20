@@ -7,6 +7,7 @@ import RandomQuote from './RandomQuote.js';
 import Etymology from './Etymology.js';
 
 
+
 class Home extends Component{
 	render(){
 		return(
@@ -21,4 +22,4 @@ class Home extends Component{
 	}
 }
 
-export default Home;
+export default Home; 
