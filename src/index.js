@@ -1,6 +1,11 @@
 // Bring in react & reactDOM
 import React from 'react';
 import ReactDOM from 'react-dom';
+//JT added redux here
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+//JT added this middleware to prevent promises from returning null
+import ReduxPromise from 'redux-promise';
 
 // bring in app component
 import App from './Components/App';
@@ -16,19 +21,20 @@ import SearchWord from './Components/SearchWord.js';
 // custom Css
 import './index.css';
 
-// We need to bring in the router 
+// We need to bring in the router
 import { Router, IndexRoute, Route, hashHistory } from 'react-router';
+
 
 ReactDOM.render(
 	<Router history={hashHistory} >
-		<Route path='/' component={App}>			
+		<Route path='/' component={App}>
 			<IndexRoute component={Home} />
 			<Route path='search/:id' component={SearchWord} />
-			<Route path='home' component={Home} />			
-			<Route path='quizMe' component={QuizMe} />			
-			<Route path='createNewList' component={CreateNewList} />			
-			<Route path='viewProgress' component={ViewProgress} />			
-		</Route>		  
+			<Route path='home' component={Home} />
+			<Route path='quizMe' component={QuizMe} />
+			<Route path='createNewList' component={CreateNewList} />
+			<Route path='viewProgress' component={ViewProgress} />
+		</Route>
 	</Router>,
   document.getElementById('root')
 );

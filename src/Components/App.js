@@ -20,11 +20,14 @@ import $ from 'jquery';
 class App extends Component {
   constructor(props){
     super(props);
-    this.handleSearch = this.handleSearch.bind(this)    
-  }
+    this.handleSearch = this.handleSearch.bind(this)
 
+  }
   handleSearch(wordToDisplay) {
-    this.props.router.push('/search/'+encodeURI(wordToDisplay));      
+
+    this.props.router.push('/search/'+encodeURI(wordToDisplay));
+
+
   }
 
 
@@ -33,14 +36,13 @@ class App extends Component {
       <div className="container-fluid">
         <BootstrapNavBar handleSearchAppFunction={this.handleSearch} />
        	<div className="row">
-	        <SideNavBar />     
-	        {this.props.children}           
+	        <SideNavBar />
+	        {this.props.children}
 
-	    </div> 
+	    </div>
       </div>
     );
   }
 }
 
 export default App;
-
