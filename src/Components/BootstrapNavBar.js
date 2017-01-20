@@ -16,6 +16,9 @@ class BootstrapNavBar extends Component{
 	handleSearchSubmit(event){
 		event.preventDefault();
 		var userInput = event.target[0].value;
+
+		//create a url for the JSON Request
+		
 		// need to pass word to app.js and give it userInput 
 		this.props.handleSearchAppFunction(userInput)
 	}
