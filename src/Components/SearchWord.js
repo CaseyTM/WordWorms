@@ -9,10 +9,15 @@ class SearchWord extends Component{
 		super(props)	
 		this.state = {
 			definition: "",
-			etymology: ""
+			etymology: "",
+			word: ""
 
 		}	
+		this.addWordToList = this.addWordToList.bind(this);
+	}
 
+	addWordToList(){
+		console.log(this.state.word)
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -32,12 +37,14 @@ class SearchWord extends Component{
 			
 			var newEtymologyInfo = wordApiResponse.results[0].lexicalEntries[0].entries[0].etymologies
 
+			let newWord = wordApiResponse.results[0].word;
 			// console.log(wordApiResponse)
 			// console.log(newEtymologyInfo)
 
 			self.setState({
 				definition: newDefinitionInfo,
-				etymology: newEtymologyInfo
+				etymology: newEtymologyInfo,
+				word: newWord
 			})
 		})
 
@@ -59,13 +66,15 @@ class SearchWord extends Component{
 			var newDefinitionInfo = wordApiResponse.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]
 			
 			var newEtymologyInfo = wordApiResponse.results[0].lexicalEntries[0].entries[0].etymologies
-
+			let newWord = wordApiResponse.results[0].word;
 			// console.log(wordApiResponse)
 			// console.log(newEtymologyInfo)
 
 			self.setState({
 				definition: newDefinitionInfo,
-				etymology: newEtymologyInfo
+				etymology: newEtymologyInfo,
+				word: newWord
+				
 			})
 
 
@@ -81,14 +90,14 @@ class SearchWord extends Component{
 
 
 
-		console.log(this.state.definition)
-		console.log(this.state.etymology)	
+		// console.log(this.state.definition)
+		// console.log(this.state.etymology)	
 		// need to generate a URL based on the word
 		
 		return(
 			<div>
 				<h1> Word: </h1>
-				<p>{this.word} </p>
+				<p>{this.state.word} </p>
 
 				<h1>Definition: </h1>
 				<p>{this.state.definition} </p>				
@@ -97,7 +106,7 @@ class SearchWord extends Component{
 				<p>{this.state.etymology} </p>
 
 
-				<button className="btn btn-success">Add This Word To One of my Lists </button>
+				<button onClick={this.addWordToList} className="btn btn-success">Add This Word To One of my Lists </button>
 
 			</div>
 		)
