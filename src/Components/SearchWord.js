@@ -15,6 +15,35 @@ class SearchWord extends Component{
 
 	}
 
+	componentWillReceiveProps(nextProps) {
+		console.log(nextProps);
+		var word = nextProps.params.id;
+
+		var url = "http://wasjustthinking.com:5000/?word="+word;
+		var self = this; 
+		
+				
+
+		
+			
+		$.getJSON(url, (wordApiResponse) =>{
+			//grab the first definition and etymology response as it is usually teh most commonly used term
+			var newDefinitionInfo = wordApiResponse.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]
+			
+			var newEtymologyInfo = wordApiResponse.results[0].lexicalEntries[0].entries[0].etymologies
+
+			// console.log(wordApiResponse)
+			// console.log(newEtymologyInfo)
+
+			self.setState({
+				definition: newDefinitionInfo,
+				etymology: newEtymologyInfo
+			})
+		})
+
+
+	}
+
 
 	componentDidMount() {
 		var word = this.props.params.id;
