@@ -39,7 +39,7 @@ myListRouterArray.push(<Route path="createNewList" component={CreateNewList} />)
 			//create a link with information above
 			var nameOfButton = newList.name
 			var linkTo = "/viewList/" + nameOfButton
-			console.log(linkTo);
+			console.log(newList);
 
 			// give each one a button name and key number so that the console doesn't whine 
 			myListRouterArray.push(<Route path={linkTo} component={ViewCustomList} />)	
