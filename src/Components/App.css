@@ -46,7 +46,10 @@
   padding-left: 20%;
   padding-right: 20%;
 
+}
 
+.button-same-row{
+  display: inline-block;
 }
 
 .btn{
@@ -55,6 +58,10 @@
   border: none;
   transition: all 0.3s ease-in;
 
+}
+
+.own-line{
+  display: block;
 }
 
 .sideNavMenu, .ww-nav{
