@@ -23,6 +23,29 @@ import './index.css';
 import { Router, IndexRoute, Route, hashHistory } from 'react-router';
 
 //need nested routes on my lists to link to the various lists the user is allowed to select from
+
+var myListRouterArray = [];
+
+myListRouterArray.push(<Route path="createNewList" component={CreateNewList} />)
+
+
+
+//write code here that goes to local storage and grabs children 
+		for (var i=0; i <localStorage.length; i++){
+			// dynamically create list names to match the new lists that were stored in local storage
+			var listPulledFromStorage = "newList" + i 
+			var retrievedObject = localStorage.getItem(listPulledFromStorage)
+			var newList = JSON.parse(retrievedObject);
+			//create a link with information above
+			var nameOfButton = newList.name
+			var linkTo = "/viewList/" + nameOfButton
+			console.log(linkTo);
+
+			// give each one a button name and key number so that the console doesn't whine 
+			myListRouterArray.push(<Route path={linkTo} component={ViewCustomList} />)	
+			
+		}
+
 ReactDOM.render(
 	<Router history={hashHistory} >
 		<Route path='/' component={App}>			
@@ -32,9 +55,10 @@ ReactDOM.render(
 			<Route path='quizMe' component={QuizMe} />			
 
 			<Route path='myLists' component={MyLists} >
-				<Route path="createNewList" component={CreateNewList} />
+				{myListRouterArray}
 				<Route path="viewList/:id" component={ViewCustomList} />				
 					// <Route path="savedWords" component={SavedWords} />	
+				
 				
 
 			</Route>			

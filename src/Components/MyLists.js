@@ -11,7 +11,7 @@ import { Link, IndexLink, hashHistory } from 'react-router'
 
 class LinkItem extends Component{
 	sayHi(){
-		console.log("hi")
+		location.reload()
 	}
 	
 	render(){
