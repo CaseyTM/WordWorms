@@ -13,6 +13,7 @@ import ViewProgress from './Components/ViewProgress.js';
 import Home from './Components/Home.js';
 import SearchWord from './Components/SearchWord.js';
 import SavedWords from './Components/SavedWords.js';
+import ViewCustomList from './Components/ViewCustomList.js'
 
 
 // custom Css
@@ -31,9 +32,10 @@ ReactDOM.render(
 			<Route path='quizMe' component={QuizMe} />			
 
 			<Route path='myLists' component={MyLists} >
-				<Route path="createNewList" component={CreateNewList}>
+				<Route path="createNewList" component={CreateNewList} />
+				<Route path="viewList/:id" component={ViewCustomList} />				
 					// <Route path="savedWords" component={SavedWords} />	
-				</Route>
+				
 
 			</Route>			
 

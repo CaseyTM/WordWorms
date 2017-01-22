@@ -2,7 +2,7 @@
 // We also need the link so that we can actively change routes
 
 import React, { Component } from 'react';
-import { Link, IndexLink } from 'react-router'
+import { Link, IndexLink, hashHistory } from 'react-router'
 
 
 // need this.props.children for its child routes
@@ -10,15 +10,26 @@ import { Link, IndexLink } from 'react-router'
 // whenever the user gets to MyList, we need to check all of the local storage and render the lists that are there
 
 class LinkItem extends Component{
+	sayHi(){
+		console.log("hi")
+	}
+	
 	render(){
+		
+		var buttonNameToUse = 'View "' + this.props.buttonName + '" List'
 
+		var linkTo = "viewList/"+this.props.buttonName;
+		
 		return(
-			<Link to="home"> <button className="btn btn-primary button-same-row"> {this.props.buttonName} </button> </Link>
+			<Link to={linkTo}> <button onClick={this.sayHi}className="btn btn-primary button-same-row"> {buttonNameToUse} </button> </Link>
 		)
 	}
 }
 
+
+
 class MyLists extends Component{
+
 	render(){
 
 		// create a links array that the will hold the various links

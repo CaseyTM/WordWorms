@@ -6,6 +6,10 @@ import { Link } from 'react-router';
 
 
 class SideNavBar extends Component{
+    handleAppState(){
+        console.log('whoa');
+    }
+
     render(){
         return(
 
