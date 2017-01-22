@@ -8,21 +8,50 @@ import { Link, IndexLink } from 'react-router'
 // need this.props.children for its child routes
 
 // whenever the user gets to MyList, we need to check all of the local storage and render the lists that are there
+
+class LinkItem extends Component{
+	render(){
+
+		return(
+			<Link to="home"> <button className="btn btn-primary button-same-row"> {this.props.buttonName} </button> </Link>
+		)
+	}
+}
+
 class MyLists extends Component{
 	render(){
+
+		// create a links array that the will hold the various links
+		var linksArray = [				
+			<Link key={1} to="myLists/createNewList"> <button className="btn btn-primary button-same-row"> Create New List </button> </Link>,
+			<Link key={2} to="home"> <button className="btn btn-primary button-same-row"> Generate Random List </button> </Link>,
+		]
+		
+		// need to retrieve objects from storage and turn it back into an object
 		var retrievedObject = localStorage.getItem('newList1');
 		
 		var newList1 = JSON.parse(retrievedObject);
-		console.log(newList1.name);
+		// console.log(newList1.name);
 
-		var linksArray = [
-			<Link to="home"> <button>{newList1.name}</button> </Link>	
-		]
+
+		for (var i=0; i <localStorage.length; i++){
+			// dynamically create list names to match the new lists that were stored in local storage
+			var listPulledFromStorage = "newList" + i 
+			var retrievedObject = localStorage.getItem(listPulledFromStorage)
+			var newList = JSON.parse(retrievedObject);
+			//create a link with information above
+			var nameOfButton = newList.name
+
+			// give each one a button name and key number so that the console doesn't whine 
+			linksArray.push(<LinkItem buttonName={nameOfButton} key={i+3} />)	
+			
+
+
+		}
+		
 		return(
 			<div className="col-sm-9">
-				<Link to="myLists/createNewList"> <button className="btn btn-primary button-same-row"> Create New List </button> </Link>
-				<Link to="home"> <button className="btn btn-primary button-same-row"> Generate Random List </button> </Link>
-				<Link to="home"> <button className="btn btn-primary button-same-row"> List1 </button> </Link>	
+				
 				{linksArray}
 				{this.props.children}
 			</div>
@@ -34,3 +63,5 @@ class MyLists extends Component{
 }
 
 export default MyLists;
+
+// <Link key={i+3} to="home"> <button className="btn btn-primary button-same-row"> {nameOfButton} </button> </Link>

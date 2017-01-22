@@ -5,6 +5,8 @@ import React, { Component } from 'react';
 import { Link, IndexLink } from 'react-router'
 // create an array with teh list of user inputtedwords!
 
+var newlists = []
+var newListNumber = 0; 
 
 class CreateNewList extends Component{
 
@@ -26,19 +28,25 @@ class CreateNewList extends Component{
 
 		//create an object that has the name of the button and the contents of the list in an array
 
+
+
 		var newList = {
 			name: listName[0],
 			tenWordsInArray: userInputtedWords
 		}
-		console.log(newList);
+	
 
 		//clear input fields after object has been generated 
 		for (var i=0; i < 11; i++){
 			listOfInputLines[i].value = ""
 		}
 
+		// need to give the computer a way to identify which list is which
+		var newListStorageName = "newList" + newListNumber
 
-		localStorage.setItem('newList1', JSON.stringify(newList))
+		localStorage.setItem(newListStorageName, JSON.stringify(newList))
+
+		newListNumber++;
 
 
 
