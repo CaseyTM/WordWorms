@@ -158,3 +158,8 @@ nav img{
     transition: all .5s;
     padding: 0px;
 }
+
+.question{
+  text-align: left;
+  font-weight: 300;
+}
