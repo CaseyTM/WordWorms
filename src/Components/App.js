@@ -20,31 +20,30 @@ import $ from 'jquery';
 class App extends Component {
   constructor(props){
     super(props);
-    this.handleSearch = this.handleSearch.bind(this)    
+    this.handleSearch = this.handleSearch.bind(this)
   }
 
   handleSearch(wordToDisplay) {
-    this.props.router.push('/search/'+encodeURI(wordToDisplay));      
+    this.props.router.push('/search/'+encodeURI(wordToDisplay));
   }
 
   handleLinkClick(listClicked){
-    
+
   }
 
 
   render() {
     return (
-      <div className="container-fluid">
+      <div className="col-xs-12">
         <BootstrapNavBar handleSearchAppFunction={this.handleSearch} />
        	<div className="row">
-	        <SideNavBar />     
-	        {this.props.children}           
+	        <SideNavBar />
+	        {this.props.children}
 
-	    </div> 
+	    </div>
       </div>
     );
   }
 }
 
 export default App;
-
