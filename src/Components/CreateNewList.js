@@ -46,6 +46,7 @@ class CreateNewList extends Component{
 
 				var wordAjaxRequest = $.getJSON(url, (wordApiResponse) =>{
 				
+<<<<<<< HEAD
 					// var newDefinitionInfo = wordApiResponse.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]															
 					// tenDefinitionsArray.push(newDefinitionInfo);
 
@@ -71,8 +72,18 @@ class CreateNewList extends Component{
 					// }
 					// // tenWordObjects.push(newDefinitionInfo);
 					// // console.log(tenWordObjects);
+=======
+					var newDefinitionInfo = wordApiResponse.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]															
+					tenDefinitionsArray.push(newDefinitionInfo);
+
+
+
+					// tenWordObjects.push(newDefinitionInfo);
+					// console.log(tenWordObjects);
+>>>>>>> Development4
 				});
-				console.log(wordAjaxRequest); //this will be a promise object	
+				console.log(wordAjaxRequest); 
+				//this will be a promise object	
 				wordPromises.push(wordAjaxRequest) //this will fill the array with a bunch of javavscript promises
 			}
 		}
@@ -143,11 +154,11 @@ class CreateNewList extends Component{
 					<input className="own-line" type="text" />
 					
 
-					<div className="input-group">
+					<div className="input-group margin-above">
 						<div className="input-group-addon">Enter List Name:</div>
-						<input className="form-control" placeholder="Search For A Word" type="text" />
+						<input className="form-control width-shrink" placeholder="Save List Name" type="text" />
 					</div>
-					<button type="submit">Save</button>	
+					<button className="btn btn-primary button-same-row" type="submit">Save</button>	
 					
 
 				</form>
