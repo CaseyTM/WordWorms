@@ -34,6 +34,6 @@ var randIndex = Math.floor(Math.random()*wordArray.length);
 
 
 var wordForToday = wordArray[randIndex];
-console.log(wordForToday)
+
 
 export default WordOfTheDay

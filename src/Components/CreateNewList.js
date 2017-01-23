@@ -46,32 +46,34 @@ class CreateNewList extends Component{
 				var newDefinitionInfo = wordApiResponse.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]															
 				tenDefinitionsArray[i] = (newDefinitionInfo);
 
-				console.log(i)
+				// console.log(i)
 
-				if(i === userInputtedWords.length - 1){
-					console.log('hi hi')
-					// we now know that we are at the point where we can create an object - we're at the end of the user inputted words list
-					for (var j=0; j<userInputtedWords.length; j++){
-						var wordObject = {
-							term: userInputtedWords[j],
-							definition: tenDefinitionsArray[j]
-						}
+				// if(i === userInputtedWords.length - 1){
+				// 	console.log('hi hi')
+				// 	// we now know that we are at the point where we can create an object - we're at the end of the user inputted words list
+				// 	for (var j=0; j<userInputtedWords.length; j++){
+				// 		var wordObject = {
+				// 			term: userInputtedWords[j],
+				// 			definition: tenDefinitionsArray[j]
+				// 		}
 
-						// after we create an jobject that has definitions and and user inputted words we can now push to the ten word objects
-						tenWordObjects.push(wordObject);
-					}
-					//still in the if statement - we need to set teh ten word object to local storage
+				// 		// after we create an jobject that has definitions and and user inputted words we can now push to the ten word objects
+				// 		tenWordObjects.push(wordObject);
+				// 	}
+				// 	//still in the if statement - we need to set teh ten word object to local storage
 
-					// localStorage.setItem("tenWordObject1", JSON.stringify(tenWordObjects))
-					console.log(tenWordObjects);
+				// 	// localStorage.setItem("tenWordObject1", JSON.stringify(tenWordObjects))
+				// 	console.log(tenWordObjects);
 
-				}
+				// }
 				// tenWordObjects.push(newDefinitionInfo);
 				// console.log(tenWordObjects);
 			})	
 			
 	
 		}
+		// setTimeout(console.log(tenDefinitionsArray),5000)
+		setTimeout(console.log(tenDefinitionsArray), 5000);
 
 
 		//create an array with ten word objects that holds the term and definition for each wordObject
