@@ -32,22 +32,7 @@ wordArray.push(new DailyWord("Esoteric", "requiring or exhibiting knowledge that
 wordArray.push(new DailyWord("Capricious", "subject to, led by, or indicative of a sudden, odd notion or unpredictable change; erratic:", "1590s, from French capricieux 'whimsical' (16c.), from Italian capriccioso, from capriccio (see caprice ). Related: Capriciously ; capriciousness."));
 var randIndex = Math.floor(Math.random()*wordArray.length);
 
-
 var wordForToday = wordArray[randIndex];
 console.log(wordForToday)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export default WordOfTheDay;

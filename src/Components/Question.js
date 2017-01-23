@@ -46,7 +46,7 @@ class Question extends Component {
 				{this.props.question.qtext}
 				<form onSubmit={this.checkAnswer} >  {/*this calls the method checkAnswer, which will check whether the answer selected matches the correct answer in props*/}
 					{optionsArray}
-					<input type="submit" />
+					<input className="btn btn-primary" type="submit" />
 				</form>
 			</div>
 		)
