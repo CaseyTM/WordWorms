@@ -2,26 +2,26 @@ import React, { Component } from 'react';
 
 
 class WordOfTheDay extends Component {
-	render() {
-		return (
-				<div className="col-sm-9">
-					<h1>Today's word is {wordForToday.word} </h1>
-					<h2>Definition: {wordForToday.definition} </h2>
-					<h3>Etymology: {wordForToday.etymology} </h3>
-				</div>
-		)
-	}
+   render() {
+       return (
+               <div className="col-sm-9">
+                   <h1>Todays word is {wordForToday.word} </h1>
+                   <h2>Definition: {wordForToday.definition} </h2>
+                   <h3>Etymology: {wordForToday.etymology} </h3>
+               </div>
+       )
+   }
 }
 
 class DailyWord{
-	constructor(word, definition, etymology){
-		this.word = word
-		this.definition = definition
-		this.etymology = etymology
-		
-	}
+   constructor(word, definition, etymology){
+       this.word = word
+       this.definition = definition
+       this.etymology = etymology
+       
+   }
 }
-	var wordArray = [];
+   var wordArray = [];
 
 wordArray.push(new DailyWord("Candor", "the quality of being open and honest in expression; frankness.", "1350-1400 (for sense 'extreme whiteness'); Middle English < Latin: radiance, whiteness; see candid"));
 wordArray.push(new DailyWord("Inference", "a conclusion reached on the basis of evidence and reasoning.", "1585-95; < Medieval Latin inferentia. See infer, -ence"));
@@ -36,18 +36,4 @@ var randIndex = Math.floor(Math.random()*wordArray.length);
 var wordForToday = wordArray[randIndex];
 console.log(wordForToday)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-export default WordOfTheDay;
+export default WordOfTheDay
