@@ -87,6 +87,11 @@ nav img{
   margin-top: 3px;
 }
 
+.nav-fix{
+  margin: 5px;
+  float:left;
+}
+
 .searchWord{
   font-weight: 300;
   font-size: 1.5em;
@@ -161,7 +166,6 @@ nav img{
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #root {
     transition: all .5s;
-    padding: 0px;
 }
 
 .question{
