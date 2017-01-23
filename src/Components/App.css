@@ -89,7 +89,7 @@ nav img{
 
 .searchWord{
   font-weight: 300;
-  font-size: 40px;
+  font-size: 1.5em;
 }
 .navbar-right{
   margin-top: 5px;
@@ -100,7 +100,12 @@ nav img{
   margin-top: 0px;
 }
 
-/*testing side nav*/
+@media (min-width: @screen-sm-min) {
+
+}
+
+
+/*SIDE NAV GOODIES*/
 
 .sidenav {
     height: 100%; /* 100% Full-height */
@@ -140,7 +145,7 @@ nav img{
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-.App {
+#root {
     transition: margin-left .5s;
-    padding: 20px;
+    padding: 0px;
 }

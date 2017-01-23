@@ -11,9 +11,11 @@ class SideNavBar extends Component{
     }
     openNav() {
     document.getElementById("mySideNav").style.width = "250px";
+    document.getElementById("root").style.marginLeft = "250px";
     }
     closeNav() {
     document.getElementById("mySideNav").style.width = "0";
+    document.getElementById("root").style.marginLeft = "0";
     }
 
     render(){
