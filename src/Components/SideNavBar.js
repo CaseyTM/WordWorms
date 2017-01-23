@@ -9,17 +9,29 @@ class SideNavBar extends Component{
     handleAppState(){
         console.log('whoa');
     }
+    openNav() {
+    document.getElementById("mySideNav").style.width = "250px";
+    document.getElementById("root").style.marginLeft = "250px";
+    document.getElementById("root").style.marginRight = "-250px";
+    }
+    closeNav() {
+    document.getElementById("mySideNav").style.width = "0";
+    document.getElementById("root").style.marginLeft = "0";
+    document.getElementById("root").style.marginRight = "0";
+    }
 
     render(){
         return(
 
 
             <div className="col-sm-3">
-                <nav className="sideNavMenu navbar navbar-default stretch-height">
-                    <Link to="home"> <button className="btn btn-primary button-spread"> Home </button> </Link>
-                    <Link to="quizMe"> <button className="btn btn-primary button-spread"> Quiz Me </button> </Link>
-                    <Link to="myLists"> <button className="btn btn-primary button-spread"> My Lists </button> </Link>
-                    <Link to="viewProgress"><button className="btn btn-primary button-spread"> View Progress </button></Link>
+                <a className="menu" onClick={this.openNav}>Menu</a>
+                <nav className="sideNavMenu sidenav navbar navbar-default stretch-height" id="mySideNav">
+                    <a onClick={this.closeNav} className="closebtn">&times;</a>
+                    <Link to="/"> Home </Link>
+                    <Link to="quizMe"> Quiz Me </Link>
+                    <Link to="myLists"> My Lists </Link>
+                    <Link to="viewProgress"> View Progress </Link>
                 </nav>
             </div>
 

@@ -7,15 +7,15 @@ class RandomQuote extends Component {
 	render() {
 		return (
 				<div className="col-sm-9">
-					<h1>{fullQuote}</h1>
+					<h1 className="searchWord well">{fullQuote}</h1>
 				</div>
 		)
 	}
 }
 
-export default RandomQuote 
+export default RandomQuote
 
-//Quote information below 
+//Quote information below
 
 
 
@@ -27,7 +27,7 @@ class Quote{
 	}
 }
 var quotes = [];
- 
+
 quotes.push(new Quote("It ain't what you don't know that gets you into trouble. It's what you know for sure that just ain't so.", "Mark Twain"));
 quotes.push(new Quote("The nitrogen in our DNA, the calcium in our teeth, the iron in our blood, the carbon in our apple pies were made in the interiors of collapsing stars. We are made of starstuff.", "Carl Sagan"));
 quotes.push(new Quote("There is a distinct difference between having an open mind and having a hole in your head from which your brain leaks out.", "James Randi"));
