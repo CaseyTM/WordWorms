@@ -52,12 +52,12 @@ quotes.push(new Quote("I'm sorry, if you were right, I'd agree with you.", "Robi
 
 
 var randIndex = Math.floor(Math.random()*quotes.length)
-<<<<<<< HEAD
+
 
 var fullQuote = quotes[randIndex].quote + " ~ " + quotes[randIndex].author; 
-=======
-var fullQuote = quotes[randIndex].quote + " ~ " + quotes[randIndex].author;
 
 
->>>>>>> Development2
+
+
+
 

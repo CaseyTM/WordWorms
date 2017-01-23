@@ -44,7 +44,7 @@ class CreateNewList extends Component{
 			$.getJSON(url, (wordApiResponse) =>{
 			
 				var newDefinitionInfo = wordApiResponse.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]															
-				tenDefinitionsArray.push(newDefinitionInfo);
+				tenDefinitionsArray[i] = (newDefinitionInfo);
 
 				console.log(i)
 
