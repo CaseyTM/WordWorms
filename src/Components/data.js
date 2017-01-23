@@ -1,7 +1,4 @@
 module.exports = {
-		name: "Sample Test",
-		description: "This is a sample test paper to demonstrate the ReactJS UI design by components.",
-		passCutoff: 0.33,		
 		applyNegativeMarking: false,
 		questions: [
 			{
@@ -14,7 +11,6 @@ module.exports = {
 				{text:"Huckleberry"}
 			],
 			ans:"Grenadine",
-			marks: 3
 		},
 		{
 			id: "2",
@@ -26,7 +22,6 @@ module.exports = {
 				{text:"Pious"}
 			],
 			ans:"Jocular",
-			marks: 2
 		},
 		{
 			id: "3",
@@ -38,7 +33,6 @@ module.exports = {
 				{text:"Effervescence"}
 			],
 			ans:"Effervescence",
-			marks: 1
 		},
 		{
 			id: "4",
@@ -50,7 +44,6 @@ module.exports = {
 				{text:"Disengaged"}
 			],
 			ans:"Abrogation",
-			marks: 1
 		},
 		{
 			id: "5",
@@ -62,7 +55,6 @@ module.exports = {
 				{text:"Placating"}
 			],
 			ans:"Humiliating",
-			marks: 1
 		},
 		{
 			id: "6",
@@ -74,7 +66,6 @@ module.exports = {
 				{text:"Stalemate"}
 			],
 			ans:"Massacre",
-			marks: 1
 		},
 		{
 			id: "7",
@@ -86,7 +77,6 @@ module.exports = {
 				{text:"Corroborated"}
 			],
 			ans:"Revered",
-			marks: 1
 		},
 		{
 			id: "8",
@@ -98,7 +88,6 @@ module.exports = {
 				{text:"Dwindling"}
 			],
 			ans:"Upsurge",
-			marks: 1
 		},
 		{
 			id: "9",
@@ -110,7 +99,6 @@ module.exports = {
 				{text:"Coy"}
 			],
 			ans:"Charismatic",
-			marks: 1
 		},
 		{
 			id: "10",
@@ -122,7 +110,6 @@ module.exports = {
 				{text:"Insurgency"}
 			],
 			ans:"Insurgency",
-			marks: 1
 		},
 		{
 			id: "11",
@@ -134,7 +121,6 @@ module.exports = {
 				{text:"Tempered"}
 			],
 			ans:"Stringent",
-			marks: 1
 		},
 		{
 			id: "12",
@@ -146,7 +132,6 @@ module.exports = {
 				{text:"Adept"}
 			],
 			ans:"Maladroit",
-			marks: 1
 		},
 		{
 			id: "13",
@@ -158,7 +143,6 @@ module.exports = {
 				{text:"Tithe"}
 			],
 			ans:"Embezzle",
-			marks: 1
 		},
 		{
 			id: "14",
@@ -170,7 +154,6 @@ module.exports = {
 				{text:"Comprehensive"}
 			],
 			ans:"Comprehensive",
-			marks: 1
 		},
 		{
 			id: "15",
@@ -182,7 +165,6 @@ module.exports = {
 				{text:"Castigated"}
 			],
 			ans:"Impugned",
-			marks: 1
 		},
 		{
 			id: "16",
@@ -194,7 +176,6 @@ module.exports = {
 				{text:"Advocate"}
 			],
 			ans:"Benevolent",
-			marks: 1
 		},
 		{
 			id: "17",
@@ -206,7 +187,6 @@ module.exports = {
 				{text:"Graceful"}
 			],
 			ans:"Avant-garde",
-			marks: 1
 		},
 		{
 			id: "18",
@@ -218,7 +198,6 @@ module.exports = {
 				{text:"Dubious"}
 			],
 			ans:"Dubious",
-			marks: 1
 		},
 		{
 			id: "19",
@@ -230,7 +209,6 @@ module.exports = {
 				{text:"Condemning"}
 			],
 			ans:"Capricious",
-			marks: 1
 		},
 		{
 			id: "20",
@@ -242,7 +220,6 @@ module.exports = {
 				{text:"Animate"}
 			],
 			ans:"Hiatus",
-			marks: 1
 		},
 		{
 			id: "21",
@@ -254,7 +231,6 @@ module.exports = {
 				{text:"Indifference"}
 			],
 			ans:"Rancor",
-			marks: 1
 		},
 		{
 			id: "22",
@@ -266,7 +242,6 @@ module.exports = {
 				{text:"Malfeasance"}
 			],
 			ans:"Arrears",
-			marks: 1
 		},
 		{
 			id: "23",
@@ -278,7 +253,6 @@ module.exports = {
 				{text:"Instigative"}
 			],
 			ans:"Turpitude",
-			marks: 1
 		},
 		{
 			id: "24",
@@ -290,7 +264,6 @@ module.exports = {
 				{text:"Convergent"}
 			],
 			ans:"Discrepancy",
-			marks: 1
 		},
 		{
 			id: "25",
@@ -302,7 +275,6 @@ module.exports = {
 				{text:"Cornering"}
 			],
 			ans:"Abduction",
-			marks: 1
 		},
 		{
 			id: "26",
@@ -314,7 +286,6 @@ module.exports = {
 				{text:"Blaspheme"}
 			],
 			ans:"Blaspheme",
-			marks: 1
 		},
 		{
 			id: "27",
@@ -326,7 +297,6 @@ module.exports = {
 				{text:"Tender"}
 			],
 			ans:"Broach",
-			marks: 1
 		},
 		{
 			id: "28",
@@ -338,7 +308,6 @@ module.exports = {
 				{text:"Sincere"}
 			],
 			ans:"Brusque",
-			marks: 1
 		},
 		{
 			id: "29",
@@ -350,7 +319,6 @@ module.exports = {
 				{text:"Vice"}
 			],
 			ans:"Buttress",
-			marks: 1
 		},
 		{
 			id: "30",
@@ -362,7 +330,6 @@ module.exports = {
 				{text:"Opus"}
 			],
 			ans:"Cacophony",
-			marks: 1
 		},
 		{
 			id: "31",
@@ -374,7 +341,6 @@ module.exports = {
 				{text:"Wile"}
 			],
 			ans:"Cajole",
-			marks: 1
 		},
 		{
 			id: "32",
@@ -386,7 +352,6 @@ module.exports = {
 				{text:"Moderation"}
 			],
 			ans:"Candor",
-			marks: 1
 		},
 		{
 			id: "33",
@@ -398,7 +363,6 @@ module.exports = {
 				{text:"Animation"}
 			],
 			ans:"Caricature",
-			marks: 1
 		},
 		{
 			id: "34",
@@ -410,7 +374,6 @@ module.exports = {
 				{text:"Envelope"}
 			],
 			ans:"Cartridge",
-			marks: 1
 		},
 		{
 			id: "35",
@@ -422,7 +385,6 @@ module.exports = {
 				{text:"Gazette"}
 			],
 			ans:"Census",
-			marks: 1
 		},
 		{
 			id: "36",
@@ -434,7 +396,6 @@ module.exports = {
 				{text:"Cessation"}
 			],
 			ans:"Cessation",
-			marks: 1
 		},
 		{
 			id: "37",
@@ -446,7 +407,6 @@ module.exports = {
 				{text:"Seamless"}
 			],
 			ans:"Chasm",
-			marks: 1
 		},
 		{
 			id: "38",
@@ -458,7 +418,6 @@ module.exports = {
 				{text:"Motley"}
 			],
 			ans:"Chromatic",
-			marks: 1
 		},
 		{
 			id: "39",
@@ -470,7 +429,6 @@ module.exports = {
 				{text:"Clairvoyance"}
 			],
 			ans:"Clairvoyance",
-			marks: 1
 		},
 		{
 			id: "40",
@@ -482,7 +440,6 @@ module.exports = {
 				{text:"Debasement"}
 			],
 			ans:"Declension",
-			marks: 1
 		},
 		{
 			id: "41",
@@ -494,7 +451,6 @@ module.exports = {
 				{text:"Defraud"}
 			],
 			ans:"Defalcate",
-			marks: 1
 		},
 		{
 			id: "42",
@@ -506,7 +462,6 @@ module.exports = {
 				{text:"Debacle"}
 			],
 			ans:"Denouement",
-			marks: 1
 		},
 		{
 			id: "43",
@@ -518,7 +473,6 @@ module.exports = {
 				{text:"Exhausted"}
 			],
 			ans:"Desiccant",
-			marks: 1
 		},
 		{
 			id: "44",
@@ -530,7 +484,6 @@ module.exports = {
 				{text:"Desultory"}
 			],
 			ans:"Desultory",
-			marks: 1
 		},
 		{
 			id: "45",
@@ -542,7 +495,6 @@ module.exports = {
 				{text:"Axiom"}
 			],
 			ans:"Dictum",
-			marks: 1
 		},
 		{
 			id: "46",
@@ -554,7 +506,6 @@ module.exports = {
 				{text:"Discharge"}
 			],
 			ans:"Effluvium",
-			marks: 1
 		},
 		{
 			id: "47",
@@ -566,7 +517,6 @@ module.exports = {
 				{text:"Redeem"}
 			],
 			ans:"Enfranchise",
-			marks: 1
 		},
 		{
 			id: "48",
@@ -578,7 +528,6 @@ module.exports = {
 				{text:"Enmity"}
 			],
 			ans:"Enmity",
-			marks: 1
 		},
 		{
 			id: "49",
@@ -590,7 +539,6 @@ module.exports = {
 				{text:"Substantial"}
 			],
 			ans:"Estimable",
-			marks: 1
 		},
 		{
 			id: "50",
@@ -602,7 +550,6 @@ module.exports = {
 				{text:"Extemporaneous"}
 			],
 			ans:"Extemporaneous",
-			marks: 1
 		},
 		]
 	};
