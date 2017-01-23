@@ -38,7 +38,7 @@ class SearchWord extends Component{
 			var newEtymologyInfo = wordApiResponse.results[0].lexicalEntries[0].entries[0].etymologies
 
 			let newWord = wordApiResponse.results[0].word;
-			// console.log(wordApiResponse)
+			console.log(wordApiResponse)
 			// console.log(newEtymologyInfo)
 
 			self.setState({

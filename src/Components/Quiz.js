@@ -25,7 +25,7 @@ class Quiz extends Component {
 			//user got the question right.  Update the score.
 			var newScore = (this.state.userScore + 1);//holds the user's score in a variable
 			console.log(newScore)
-			var newScoreAsPercent = Math.round((newScore / 3) * 100) //representing the score as a percent value
+			var newScoreAsPercent = Math.round((newScore / 10) * 100) //representing the score as a percent value
 			this.setState({			
 				questionIndex: newQuestionNumber,
 				userScore: newScore,
@@ -42,7 +42,8 @@ class Quiz extends Component {
 	render () {
 		//quizArray will contain all the questions on the quiz; they need to be pushed on from data.js 
 		var quizArray = [];
-		if (this.state.questionIndex < Data.questions.length) {
+		//need 10 questions max
+		if (this.state.questionIndex < 10) {
 			quizArray.push(
 			<Question letMeKnowWhenFinished={this.userAnswered} question={Data.questions[this.state.questionIndex]} key={this.state.questionIndex} /> //questions is an array - we have to pass it one question at a time, hence the [] after Data.questions - we need to pass it one question at a time, hence why we're passing it this.state.questionIndex; letMeKnowWhenFinished is the title of the prop that's passed userAnswered (will handle score updating and question advancement once question has been answered and scored)
 			)

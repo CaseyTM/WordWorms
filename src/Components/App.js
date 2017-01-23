@@ -27,6 +27,10 @@ class App extends Component {
     this.props.router.push('/search/'+encodeURI(wordToDisplay));      
   }
 
+  handleLinkClick(listClicked){
+    
+  }
+
 
   render() {
     return (
