@@ -42,4 +42,3 @@ Screen shots
 Github
 
 Code Example
-
