@@ -10,7 +10,7 @@ import { Link, IndexLink, hashHistory } from 'react-router'
 // whenever the user gets to MyList, we need to check all of the local storage and render the lists that are there
 
 class LinkItem extends Component{
-	sayHi(){
+	reloadPage(){
 		location.reload()
 	}
 	
@@ -21,7 +21,7 @@ class LinkItem extends Component{
 		var linkTo = "viewList/"+this.props.buttonName;
 		
 		return(
-			<Link to={linkTo}> <button onClick={this.sayHi}className="btn btn-primary button-same-row"> {buttonNameToUse} </button> </Link>
+			<Link to={linkTo}> <button onClick={this.reloadPage}className="btn btn-primary button-same-row"> {buttonNameToUse} </button> </Link>
 		)
 	}
 }
