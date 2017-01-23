@@ -7,6 +7,7 @@ import App from './Components/App';
 
 // bring in components that will match routes
 import QuizMe from './Components/QuizMe.js';
+import Quiz from './Components/Quiz.js'
 import CreateNewList from './Components/CreateNewList.js';
 import MyLists from './Components/MyLists.js';
 import ViewProgress from './Components/ViewProgress.js';
@@ -52,7 +53,9 @@ ReactDOM.render(
 			<IndexRoute component={Home} />
 			<Route path='search/:id' component={SearchWord} />
 			<Route path='home' component={Home} />			
-			<Route path='quizMe' component={QuizMe} />			
+			<Route path='quizMe' component={QuizMe}>
+				<Route path='/randomQuiz' component={Quiz} />
+			</Route>			
 
 			<Route path='myLists' component={MyLists} >
 				{myListRouterArray}
