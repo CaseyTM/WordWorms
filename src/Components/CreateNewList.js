@@ -125,11 +125,11 @@ class CreateNewList extends Component{
 					<input className="own-line" type="text" />
 					
 
-					<div className="input-group">
+					<div className="input-group margin-above">
 						<div className="input-group-addon">Enter List Name:</div>
-						<input className="form-control" placeholder="Search For A Word" type="text" />
+						<input className="form-control width-shrink" placeholder="Save List Name" type="text" />
 					</div>
-					<button type="submit">Save</button>	
+					<button className="btn btn-primary button-same-row" type="submit">Save</button>	
 					
 
 				</form>

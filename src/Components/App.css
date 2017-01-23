@@ -215,3 +215,9 @@ img{
 .high-score{
   color: green;
 }
+
+.form-control.width-shrink{
+  background-color: #dae5ed;
+  width: 10vw;
+
+}

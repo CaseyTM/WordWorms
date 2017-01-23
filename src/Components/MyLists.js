@@ -35,8 +35,7 @@ class MyLists extends Component{
 
 		// create a links array that the will hold the various links
 		var linksArray = [				
-			<Link key={1} to="myLists/createNewList"> <button className="btn btn-primary button-same-row"> Create New List </button> </Link>,
-			<Link key={2} to="home"> <button className="btn btn-primary button-same-row"> Generate Random List </button> </Link>,
+			<Link key={1} to="myLists/createNewList"> <button className="btn btn-primary button-same-row"> Create New List </button> </Link>,			
 		]
 		
 		// need to retrieve objects from storage and turn it back into an object
