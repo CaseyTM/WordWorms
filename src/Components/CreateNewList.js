@@ -1,5 +1,6 @@
 // We need Component
 // We also need the link so that we can actively change routes
+//fix comments!!!!!!!
 
 import React, { Component } from 'react';
 import { Link, IndexLink } from 'react-router'
