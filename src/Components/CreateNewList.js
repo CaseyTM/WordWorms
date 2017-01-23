@@ -3,6 +3,7 @@
 
 import React, { Component } from 'react';
 import { Link, IndexLink } from 'react-router'
+import $ from 'jquery'
 // create an array with teh list of user inputtedwords!
 
 var newlists = []
@@ -12,6 +13,7 @@ class CreateNewList extends Component{
 
 	createList(event){
 
+
 		var userInputtedWords = []
 		var listName = []
 		event.preventDefault();
@@ -19,7 +21,7 @@ class CreateNewList extends Component{
 		var listOfInputLines = event.target
 		for (var i=0; i < 10; i++){
 			userInputtedWords.push(listOfInputLines[i].value)
-		}
+		}		
 
 		listName.push(listOfInputLines[10].value)
 		// listOfInputLines.map((inputBox, index) =>{
@@ -29,7 +31,62 @@ class CreateNewList extends Component{
 		//create an object that has the name of the button and the contents of the list in an array
 
 
+		
 
+		var tenDefinitionsArray = []
+		var tenWordObjects = []
+
+		for(var i=0; i<userInputtedWords.length; i++){
+			var url = "http://wasjustthinking.com:5000/?word="+userInputtedWords[i];
+			// console.log(i);
+			
+
+			$.getJSON(url, (wordApiResponse) =>{
+			
+				var newDefinitionInfo = wordApiResponse.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]															
+				tenDefinitionsArray.push(newDefinitionInfo);
+
+				console.log(i)
+
+				if(i === userInputtedWords.length - 1){
+					console.log('hi hi')
+					// we now know that we are at the point where we can create an object - we're at the end of the user inputted words list
+					for (var j=0; j<userInputtedWords.length; j++){
+						var wordObject = {
+							term: userInputtedWords[j],
+							definition: tenDefinitionsArray[j]
+						}
+
+						// after we create an jobject that has definitions and and user inputted words we can now push to the ten word objects
+						tenWordObjects.push(wordObject);
+					}
+					//still in the if statement - we need to set teh ten word object to local storage
+
+					// localStorage.setItem("tenWordObject1", JSON.stringify(tenWordObjects))
+					console.log(tenWordObjects);
+
+				}
+				// tenWordObjects.push(newDefinitionInfo);
+				// console.log(tenWordObjects);
+			})	
+			
+	
+		}
+
+
+		//create an array with ten word objects that holds the term and definition for each wordObject
+		
+
+		for (var i=0; i<userInputtedWords.length; i++){
+			var wordObject = {
+				term: userInputtedWords[i],
+				definition: tenDefinitionsArray[i]
+			}
+
+			tenWordObjects.push(wordObject)
+			// console.log(tenWordObjects);
+		}
+		
 		var newList = {
 			name: listName[0],
 			tenWordsInArray: userInputtedWords

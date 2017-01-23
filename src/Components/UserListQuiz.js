@@ -9,6 +9,7 @@ import $ from 'jquery';
 
 
 class UserListQuiz extends Component{
+	
 
 	render(){
 		var url = location.href;
@@ -19,41 +20,36 @@ class UserListQuiz extends Component{
 
 		
 		var word1 = []
-		var definition1 = []							
 		
 
 		// should be able to go and grab items from the object
 	
-			for (var i=0; i<localStorage.length; i++){
-				// parse all of hte objects into a JSON object
-				var listPulledFromStorage = "newList" + i 
-				var retrievedObject = localStorage.getItem(listPulledFromStorage)
-				var newList = JSON.parse(retrievedObject);
-				// get the ten words associated with this object
-				var newTenWordsArray = newList.tenWordsInArray	
+		for (var i=0; i<localStorage.length; i++){
+			// parse all of hte objects into a JSON object
+			var listPulledFromStorage = "newList" + i 
+			var retrievedObject = localStorage.getItem(listPulledFromStorage)
+			var newList = JSON.parse(retrievedObject);
+			// get the ten words associated with this object
+			var newTenWordsArray = newList.tenWordsInArray	
+			
+
+			// if this is the correct list, then we can actually map through teh words associated with teh list
+			if (newList.name === listName){				
+				word1 = newTenWordsArray[1]
+				var url = "http://wasjustthinking.com:5000/?word="+word1;
+				$.getJSON(url, (wordApiResponse) =>{
 				
-
-				// if this is the correct list, then we can actually map through teh words associated with teh list
-				if (newList.name === listName){				
-					word1 = newTenWordsArray[1]
-					var url = "http://wasjustthinking.com:5000/?word="+word1;
-					$.getJSON(url, (wordApiResponse) =>{
-					//grab the first definition and etymology response as it is usually teh most commonly used term
-					var newDefinitionInfo = wordApiResponse.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]
-					
-					definition1[0] = newDefinitionInfo
-
-
-					})
-				}
+				var newDefinitionInfo = wordApiResponse.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]															
+				})
 			}
-			console.log(definition1)
+		}
+			
 
 		
 		return(
 			<div>
 				<h1> {word1} </h1>
-				<p> {definition1} </p>
+				
 			</div>
 		)
 	}
