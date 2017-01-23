@@ -7,7 +7,7 @@ class RandomQuote extends Component {
 	render() {
 		return (
 				<div className="col-sm-9">
-					<h1 className="searchWord">{fullQuote}</h1>
+					<h1 className="searchWord well">{fullQuote}</h1>
 				</div>
 		)
 	}

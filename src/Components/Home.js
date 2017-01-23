@@ -13,10 +13,9 @@ class Home extends Component{
 		return(
 			<div className="col-sm-9">
 				<WordOfTheDay />
-				<Etymology />
 				<RandomQuote />
-					
-			</div>			
+
+			</div>
 		)
 	}
 }

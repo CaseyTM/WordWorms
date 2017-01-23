@@ -95,7 +95,7 @@ class SearchWord extends Component{
 		// need to generate a URL based on the word
 
 		return(
-			<div>
+			<div className="col-xs-12">
 				<h1 className="searchWord"> Word: </h1>
 				<p>{this.state.word} </p>
 

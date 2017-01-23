@@ -91,6 +91,11 @@ nav img{
   font-weight: 300;
   font-size: 1.5em;
 }
+
+.wod{
+  font-weight: 300;
+}
+
 .navbar-right{
   margin-top: 5px;
 }
