@@ -8,6 +8,7 @@ import Etymology from './Etymology.js';
 import QuizMe from './QuizMe.js';
 
 
+
 class Home extends Component{
 	render(){
 		return(

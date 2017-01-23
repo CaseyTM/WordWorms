@@ -34,78 +34,88 @@ class CreateNewList extends Component{
 		
 
 		var tenDefinitionsArray = []
+		var wordPromises = []
 		var tenWordObjects = []
 
 		for(var i=0; i<userInputtedWords.length; i++){
-			var url = "http://wasjustthinking.com:5000/?word="+userInputtedWords[i];
-			// console.log(i);
-			
+			if(userInputtedWords[i] !== ""){
+				var url = "http://wasjustthinking.com:5000/?word="+userInputtedWords[i];
+				// console.log(i);
+				
 
-			$.getJSON(url, (wordApiResponse) =>{
-			
-				var newDefinitionInfo = wordApiResponse.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]															
-				tenDefinitionsArray[i] = (newDefinitionInfo);
+				var wordAjaxRequest = $.getJSON(url, (wordApiResponse) =>{
+				
+					var newDefinitionInfo = wordApiResponse.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]															
+					tenDefinitionsArray.push(newDefinitionInfo);
 
-				console.log(i)
+					console.log(i)
 
-				if(i === userInputtedWords.length - 1){
-					console.log('hi hi')
-					// we now know that we are at the point where we can create an object - we're at the end of the user inputted words list
-					for (var j=0; j<userInputtedWords.length; j++){
-						var wordObject = {
-							term: userInputtedWords[j],
-							definition: tenDefinitionsArray[j]
+					if(i === userInputtedWords.length - 1){
+						console.log('hi hi')
+						// we now know that we are at the point where we can create an object - we're at the end of the user inputted words list
+						for (var j=0; j<userInputtedWords.length; j++){
+							var wordObject = {
+								term: userInputtedWords[j],
+								definition: tenDefinitionsArray[j]
+							}
+
+							// after we create an jobject that has definitions and and user inputted words we can now push to the ten word objects
+							tenWordObjects.push(wordObject);
 						}
+						//still in the if statement - we need to set teh ten word object to local storage
 
-						// after we create an jobject that has definitions and and user inputted words we can now push to the ten word objects
-						tenWordObjects.push(wordObject);
+						// localStorage.setItem("tenWordObject1", JSON.stringify(tenWordObjects))
+						console.log(tenWordObjects);
+
 					}
-					//still in the if statement - we need to set teh ten word object to local storage
-
-					// localStorage.setItem("tenWordObject1", JSON.stringify(tenWordObjects))
-					console.log(tenWordObjects);
-
-				}
-				// tenWordObjects.push(newDefinitionInfo);
-				// console.log(tenWordObjects);
-			})	
-			
-	
+					// tenWordObjects.push(newDefinitionInfo);
+					// console.log(tenWordObjects);
+				});
+				console.log(wordAjaxRequest); //this will be a promise object	
+				wordPromises.push(wordAjaxRequest) //this will fill the array with a bunch of javavscript promises
+			}
 		}
 
+		$.when.apply(null, wordPromises).done(()=>{
 
-		//create an array with ten word objects that holds the term and definition for each wordObject
+			console.log(wordPromises);
+			for(let i = 0; i<wordPromises.length; i++){
+				tenWordObjects.push(wordPromises[i].responseJSON.results)
+			}
+			console.log(tenWordObjects);
+
+			//create an array with ten word objects that holds the term and definition for each wordObject
+			
+
+			for (var i=0; i<userInputtedWords.length; i++){
+				var wordObject = {
+					term: userInputtedWords[i],
+					definition: tenDefinitionsArray[i]
+				}
+
+				tenWordObjects.push(wordObject)
+				// console.log(tenWordObjects);
+			}
+			
+			var newList = {
+				name: listName[0],
+				tenWordsInArray: userInputtedWords
+			}
 		
 
-		for (var i=0; i<userInputtedWords.length; i++){
-			var wordObject = {
-				term: userInputtedWords[i],
-				definition: tenDefinitionsArray[i]
+			//clear input fields after object has been generated 
+			for (var i=0; i < 11; i++){
+				listOfInputLines[i].value = ""
 			}
 
-			tenWordObjects.push(wordObject)
-			// console.log(tenWordObjects);
-		}
-		
-		var newList = {
-			name: listName[0],
-			tenWordsInArray: userInputtedWords
-		}
-	
+			// need to give the computer a way to identify which list is which
+			var newListStorageName = "newList" + newListNumber
 
-		//clear input fields after object has been generated 
-		for (var i=0; i < 11; i++){
-			listOfInputLines[i].value = ""
-		}
+			localStorage.setItem(newListStorageName, JSON.stringify(newList))
 
-		// need to give the computer a way to identify which list is which
-		var newListStorageName = "newList" + newListNumber
+			newListNumber++;
 
-		localStorage.setItem(newListStorageName, JSON.stringify(newList))
-
-		newListNumber++;
-
-
+		});
 
 		
 	}
@@ -145,5 +155,6 @@ class CreateNewList extends Component{
 		)
 	}
 }
+
 
 export default CreateNewList;

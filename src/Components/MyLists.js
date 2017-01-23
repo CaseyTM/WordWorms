@@ -28,6 +28,7 @@ class LinkItem extends Component{
 
 
 
+
 class MyLists extends Component{
 
 	render(){
@@ -53,6 +54,7 @@ class MyLists extends Component{
 			//create a link with information above
 			var nameOfButton = newList.name
 
+
 			// give each one a button name and key number so that the console doesn't whine 
 			linksArray.push(<LinkItem buttonName={nameOfButton} key={i+3} />)	
 			
@@ -76,3 +78,6 @@ class MyLists extends Component{
 export default MyLists;
 
 // <Link key={i+3} to="home"> <button className="btn btn-primary button-same-row"> {nameOfButton} </button> </Link>
+
+
+

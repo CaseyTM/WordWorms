@@ -11,6 +11,7 @@ class WordItem extends Component{
 	
 	render(){
 		var wordToDisplay = this.props.wordToDisplay 
+		console.log(wordToDisplay)
 		return(
 			<div> 
 				{wordToDisplay}
