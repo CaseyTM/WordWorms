@@ -38,7 +38,7 @@ class QuizMe extends Component {
 			var newList = JSON.parse(retrievedObject);
 			//create a link with information above
 			var nameOfButton = newList.name
-
+			
 			// give each one a button name and key number so that the console doesn't whine 
 			linksArray.push(<LinkItem buttonName={nameOfButton} key={i+3} />)	
 			
