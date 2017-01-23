@@ -5,7 +5,7 @@ class WordOfTheDay extends Component {
     render() {
         return (
                 <div className="col-sm-9">
-                    <h1>Today's word is {wordForToday.word} </h1>
+                    <h1>Todays word is {wordForToday.word} </h1>
                     <h2>Definition: {wordForToday.definition} </h2>
                     <h3>Etymology: {wordForToday.etymology} </h3>
                 </div>
@@ -35,3 +35,5 @@ var randIndex = Math.floor(Math.random()*wordArray.length);
 
 var wordForToday = wordArray[randIndex];
 console.log(wordForToday)
+
+export default WordOfTheDay
