@@ -76,6 +76,9 @@ class Quiz extends Component {
 			quizArray.push(
 			<Question letMeKnowWhenFinished={this.userAnswered} question={Data.questions[this.state.questionIndex]} key={this.state.questionIndex} /> //questions is an array - we have to pass it one question at a time, hence the [] after Data.questions - we need to pass it one question at a time, hence why we're passing it this.state.questionIndex; letMeKnowWhenFinished is the title of the prop that's passed userAnswered (will handle score updating and question advancement once question has been answered and scored)
 			)
+			scorePercentDisplay = this.state.scoreAsPercent;
+			scoreDisplay = "You got " + scorePercentDisplay + "% correct!"
+
 
 			// var scorePercentDisplay = "3";
 		} else{

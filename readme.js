@@ -21,6 +21,7 @@ What it is
 	you never need to look up a word more than once.
 
 What we Used
+	Bootstrap
 	React and React-Router
 	Javascript ES-6
 	HTML
@@ -32,13 +33,23 @@ Challenges and Solutions
 	Our only regret is that we had but one Rishi!
 
 MVP
+	Give the user the ability to create and view custom generated lists of words.
+	Generate a random quiz from the User's data.
+	Routing for each section.
 
 Our Stretch Goals 
+	Give the user the ability to Build their own quiz structure.
+	Implement Redux 
+
 
 Authors
+	Rishi Karri
+	Elizabeth Gulsby
+	Casey McCaskill
+	Jonathan Townsend
 
 Screen shots
 
-Github
+Github Link "https://github.com/CaseyTM/WordWorms"
 
 Code Example
