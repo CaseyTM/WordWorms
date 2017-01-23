@@ -12,10 +12,12 @@ class SideNavBar extends Component{
     openNav() {
     document.getElementById("mySideNav").style.width = "250px";
     document.getElementById("root").style.marginLeft = "250px";
+    document.getElementById("root").style.marginRight = "-250px";
     }
     closeNav() {
     document.getElementById("mySideNav").style.width = "0";
     document.getElementById("root").style.marginLeft = "0";
+    document.getElementById("root").style.marginRight = "0";
     }
 
     render(){
@@ -23,7 +25,7 @@ class SideNavBar extends Component{
 
 
             <div className="col-sm-3">
-                <a onClick={this.openNav}>Menu</a>
+                <a className="menu" onClick={this.openNav}>Menu</a>
                 <nav className="sideNavMenu sidenav navbar navbar-default stretch-height" id="mySideNav">
                     <a onClick={this.closeNav} className="closebtn">&times;</a>
                     <Link to="/"> Home </Link>

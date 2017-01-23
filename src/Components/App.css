@@ -100,6 +100,15 @@ nav img{
   margin-top: 0px;
 }
 
+.menu{
+  font-size: 1.5em;
+  font-weight: 300;
+  color: #EE9C5D;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  transition: all .5s;
+}
+
 @media (min-width: @screen-sm-min) {
 
 }
@@ -146,6 +155,6 @@ nav img{
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #root {
-    transition: margin-left .5s;
+    transition: all .5s;
     padding: 0px;
 }
