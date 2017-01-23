@@ -33,7 +33,7 @@ class BootstrapNavBar extends Component{
 						<img src="http://www.clipartkid.com/images/8/cute-bookworm-svg-cut-file-cute-bookworm-clipart-free-svgs-free-svg-LMlbUC-clipart.png" />
 
 
-						<form onSubmit={this.handleSearchSubmit} className="navbar-right col-sm-5 form-inline">
+						<form onSubmit={this.handleSearchSubmit} className="navbar-right col-sm-6 col-md-5 col-lg-4 form-inline">
 							<div className="form-group">
 								<div className="input-group">
 									<div className="input-group-addon">Learn Something!</div>
