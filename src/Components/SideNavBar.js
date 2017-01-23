@@ -30,8 +30,7 @@ class SideNavBar extends Component{
                     <a onClick={this.closeNav} className="closebtn">&times;</a>
                     <Link to="/"> Home </Link>
                     <Link to="quizMe"> Quiz Me </Link>
-                    <Link to="myLists"> My Lists </Link>
-                    <Link to="viewProgress"> View Progress </Link>
+                    <Link to="myLists"> My Lists </Link>                    
                 </nav>
             </div>
 
