@@ -6,6 +6,18 @@ import Data from './data.js'
 var scorePercentDisplay = "";
 var scoreDisplay = "";
 
+function returnScorePhraseWithColor(percentage){
+
+	var scoreDisplay = "You got " + percentage + "% correct!"
+	if (percentage < 70){
+		return(<h1 className="low-score">{scoreDisplay} </h1>)
+	}else if (percentage >=70 && percentage <=80){
+		return(<h1 className="medium-score">{scoreDisplay} </h1>)
+	}else{
+		return(<h1 className="high-score">{scoreDisplay} </h1>)
+	}
+}
+
 
 class Quiz extends Component {
 	constructor(props) {
@@ -81,13 +93,17 @@ class Quiz extends Component {
 		} else{
 			//the user has completed the quiz
 			scorePercentDisplay = this.state.scoreAsPercent;
-			scoreDisplay = "You got " + scorePercentDisplay + "% correct!"
+			console.log(scorePercentDisplay)
+			console.log(typeof scorePercentDisplay);
+			
+			var scoreDisplayWithColor = returnScorePhraseWithColor(scorePercentDisplay)
+
 
 		}
 		return (
 			<div className="App">
 
-			<h1>{scoreDisplay}</h1>
+				{scoreDisplayWithColor}
 				<h2>{quizArray}</h2>
 			</div>
 		)
