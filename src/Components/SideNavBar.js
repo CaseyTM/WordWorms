@@ -31,7 +31,7 @@ class SideNavBar extends Component{
                     <Link to="/"> Home </Link>
                     <Link to="quizMe"> Quiz Me </Link>
                     <Link to="myLists"> My Lists </Link> 
-                    <img src='http://www.clipartbest.com/cliparts/jTx/9Eq/jTx9EqXTE.jpeg' />                   
+                    <img src={require('./BookWorm.png')} />                   
                 </nav>
             </div>
 
