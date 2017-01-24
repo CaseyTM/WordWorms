@@ -38,48 +38,48 @@ class CreateNewList extends Component{
 		var wordPromises = []
 		var tenWordObjects = []
 
-		for(var i=0; i<userInputtedWords.length; i++){
-			if(userInputtedWords[i] !== ""){
-				var url = "http://wasjustthinking.com:5000/?word="+userInputtedWords[i];
-				// console.log(i);
+		// for(var i=0; i<userInputtedWords.length; i++){
+		// 	if(userInputtedWords[i] !== ""){
+		// 		var url = "http://ec2-54-218-208-100.us-west-2.compute.amazonaws.com:5000/?word="+userInputtedWords[i];
+		// 		// console.log(i);
 				
 
-				var wordAjaxRequest = $.getJSON(url, (wordApiResponse) =>{
+		// 		// var wordAjaxRequest = $.getJSON(url, (wordApiResponse) =>{
 				
-					var newDefinitionInfo = wordApiResponse.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]															
-					tenDefinitionsArray.push(newDefinitionInfo);
+		// 		// 	var newDefinitionInfo = wordApiResponse.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]															
+		// 		// 	tenDefinitionsArray.push(newDefinitionInfo);
 
 
 
-					// tenWordObjects.push(newDefinitionInfo);
-					// console.log(tenWordObjects);
-				});
-				console.log(wordAjaxRequest); 
-				//this will be a promise object	
-				wordPromises.push(wordAjaxRequest) //this will fill the array with a bunch of javavscript promises
-			}
-		}
+		// 		// 	// tenWordObjects.push(newDefinitionInfo);
+		// 		// 	// console.log(tenWordObjects);
+		// 		// });
+				
+		// 		//this will be a promise object	
+		// 		// wordPromises.push(wordAjaxRequest) //this will fill the array with a bunch of javavscript promises
+		// 	}
+		// }
 
-		$.when.apply(null, wordPromises).done(()=>{
+		// $.when.apply(null, wordPromises).done(()=>{
 
-			console.log(wordPromises);
-			for(let i = 0; i<wordPromises.length; i++){
-				tenWordObjects.push(wordPromises[i].responseJSON.results)
-			}
-			console.log(tenWordObjects);
+		// 	console.log(wordPromises);
+		// 	for(let i = 0; i<wordPromises.length; i++){
+		// 		tenWordObjects.push(wordPromises[i].responseJSON.results)
+		// 	}
+		// 	console.log(tenWordObjects);
 
-			//create an array with ten word objects that holds the term and definition for each wordObject
+		// 	//create an array with ten word objects that holds the term and definition for each wordObject
 			
 
-			for (var i=0; i<userInputtedWords.length; i++){
-				var wordObject = {
-					term: userInputtedWords[i],
-					definition: tenDefinitionsArray[i]
-				}
+		// 	for (var i=0; i<userInputtedWords.length; i++){
+		// 		var wordObject = {
+		// 			term: userInputtedWords[i],
+		// 			definition: tenDefinitionsArray[i]
+		// 		}
 
-				tenWordObjects.push(wordObject)
-				// console.log(tenWordObjects);
-			}
+		// 		tenWordObjects.push(wordObject)
+		// 		// console.log(tenWordObjects);
+		// 	}
 			
 			var newList = {
 				name: listName[0],
@@ -99,10 +99,10 @@ class CreateNewList extends Component{
 
 			newListNumber++;
 
-		});
+		}
 
 		
-	}
+	
 	render(){
 		return(
 			<div className="col-sm-9">

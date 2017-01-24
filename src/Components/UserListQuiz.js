@@ -36,11 +36,11 @@ class UserListQuiz extends Component{
 			// if this is the correct list, then we can actually map through teh words associated with teh list
 			if (newList.name === listName){				
 				word1 = newTenWordsArray[1]
-				var url = "http://wasjustthinking.com:5000/?word="+word1;
-				$.getJSON(url, (wordApiResponse) =>{
+				// var url = "http://wasjustthinking.com:5000/?word="+word1;
+				// $.getJSON(url, (wordApiResponse) =>{
 				
-				var newDefinitionInfo = wordApiResponse.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]															
-				})
+				// var newDefinitionInfo = wordApiResponse.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]															
+				// })
 			}
 		}
 			

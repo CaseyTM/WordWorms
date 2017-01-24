@@ -221,3 +221,9 @@ img{
   width: 10vw;
 
 }
+
+/* styling for seach word */
+
+.bold-text{
+  font-weight: 600;
+}
