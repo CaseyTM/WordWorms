@@ -72,7 +72,8 @@
        __Contributions__: Provided suggestions for developing concept and styling for application.  Implemented responsive layout and design.
 
 ### Screen shots
-        
+    <img src='./Images/wordworms_1.gif'>
+    <img src='./Images/wordworms_2.gif'>
         
 ### Github
 
