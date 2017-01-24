@@ -34,6 +34,7 @@ class SearchWord extends Component{
 		$.getJSON(url, (wordApiResponse) =>{
 			//grab the first definition and etymology response as it is usually teh most commonly used term
 			var newDefinitionInfo = wordApiResponse.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]
+			
 
 			var newEtymologyInfo = wordApiResponse.results[0].lexicalEntries[0].entries[0].etymologies
 

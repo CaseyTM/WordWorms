@@ -10,7 +10,6 @@ import QuizMe from './Components/QuizMe.js';
 import Quiz from './Components/Quiz.js'
 import CreateNewList from './Components/CreateNewList.js';
 import MyLists from './Components/MyLists.js';
-import ViewProgress from './Components/ViewProgress.js';
 import Home from './Components/Home.js';
 import SearchWord from './Components/SearchWord.js';
 import SavedWords from './Components/SavedWords.js';
@@ -81,7 +80,7 @@ ReactDOM.render(
 					// <Route path="savedWords" component={SavedWords} />									
 			</Route>			
 
-			<Route path='viewProgress' component={ViewProgress} />			
+			
 		</Route>		  
 	</Router>,
   document.getElementById('root')
