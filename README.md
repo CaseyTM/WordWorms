@@ -1,9 +1,6 @@
 Team Angry Carrot Sticks - WordWorms
-
 <a href="http://www.elizabethgulsby.com/wordworms/#/">WordWorms</a>
-
 Contents
-
     Overview
     What We Used
     Challenges and Solutions
@@ -30,56 +27,54 @@ What we Used
     AWS
 
 Challenges and Solutions
+
+    Challenge 1: Had difficulties with sourcing a reliable Words API. A lot of APIs returned definitions where the most pertinent definition was not always the first. 
+
+    Solution: Ended up choosing the Oxford Dictionaries API. This almost always logged the most relevant definition as the first one. This way, we were able to source the first definition returned from every AJAX request and provide the user with a solid definition on every search.
+
+    Challenge 2: Once we succesfully created the search functionionality using react router, we ran into the problem of searching for new words without having to first refresh the page. 
+
+    Solution: The problem was that we were making an AJAX call using ComponentDidMount. While this was fine for initial load, every time the user tried to search again, the page would not load the new searched word. Put simply, the search function was good for only the first search. This happened because the Component had already mounted. Our solution to this was adding in ComponentWillReceiveProps. This fixed the solution because a new parameter (the URL changed) was added causing ComponentWillReceiveProps to fire which in turn ran another AJAX call and re-rendered the page with the new definition and corresponding etymology. 
+
+    Challenge 3: Had difficulties committing/pushing/brancing with SourceTree
+
+    Solution: Created an alternate branch and practiced until we felt comfortable using source tree / pulling from one another. Once we felt comfortable, we created a system where we had to pull from the team branch and merge into our personal branch before making changes. This ensured everyone was at the same place prior to moving forward. 
     
-
-    Challenge 1: Had difficulties with sourcing a reliable Words API (custom endpoint; ended up having to make our own endpoint using AWS)
-    Challenge 2: Had difficulties committing/pushing/brancing with SourceTree
-    Challenge 3: Had difficulties with Javascript Promises
-    Challenge 4: ComponentWillReceiveProps
-    Challenge 5: 
-
-
 
 MVP
     Searching for words 
-   Creating custom lists 
-   Generating random quiz
-
+    Creating custom lists 
+    Generating random quiz
 
 Our Stretch Goals
     Game
     Quizzes generated on custom lists
 
-
 Authors
     All team members are students in DigitalCrafts' November 2016 cohort.  This project was completed using the SCRUMM agile development methodology.  Paired programming was utilized throughout all stages of development, with some individual focus on localized components of the application. 
-
     Rishi Karri
-        Front-end Developer
-        Contributions:  Provided initial concept. Built custom list feature, search component, local storage solution for storing custom lists, added features to each component within the lifecycle, and assisted with troubleshooting the implementation throughout the project.  
+       Front-end Developer
+       Contributions:  Provided initial concept. Built custom list feature, search component, local storage solution for storing custom lists, added features to each component within the lifecycle, and assisted with troubleshooting the implementation throughout the project.  
 
-    Elizabeth Gulsby
-        SCRUMM Master, Front-end Developer 
-        Contributions: Managed the team's development process for the project, including planning functionality for each stage and navigating obstacles impeding progress. Created quiz feature with random question generation, provided support and assisted with troubleshooting. 
+   Elizabeth Gulsby
+       SCRUMM Master, Front-end Developer
+       Contributions: Managed the team's development process for the project, including planning functionality for each stage and navigating obstacles impeding progress. Created quiz feature with random question generation, provided support and assisted with troubleshooting.
 
-    Casey McCaskill
-        Front-end Developer
-        Contributions: Developed home page features, including random quote generation as well as random word generation with corresponding etymology.  Provided support and assisted with troubleshooting throughout the project.   
+   Casey McCaskill
+       Front-end Developer
+       Contributions: Developed home page features, including random quote generation as well as random word generation with corresponding etymology.  Provided support and assisted with troubleshooting throughout the project.  
 
-    JT Townsend
-        Front-end Developer/Styling Guru
-        Contributions: Provided suggestions for developing concept and styling for application.  Implemented responsive layout and design.
-
+   JT Townsend
+       Front-end Developer/Styling Guru
+       Contributions: Provided suggestions for developing concept and styling for application.  Implemented responsive layout and design.
 
 Screen shots
         (attached)
-
+        
 Github
     <a href='https://github.com/CaseyTM/WordWorms'>WordWorms</a>
-
 Code Examples
 //searching for words, adding ability to generate and populate custom lists
-
     "class SearchWord extends Component{
     constructor(props){
         super(props)
@@ -87,47 +82,32 @@ Code Examples
             definition: "",
             etymology: "",
             word: ""
-
         }
         this.addWordToList = this.addWordToList.bind(this);
     }
-
     addWordToList(){
         console.log(this.state.word)
     }
-
     componentWillReceiveProps(nextProps) {
         console.log(nextProps);
         var word = nextProps.params.id;
-
         var url = "http://wasjustthinking.com:5000/?word="+word;
         var self = this;
-
-
-
-
-
         $.getJSON(url, (wordApiResponse) =>{
             //grab the first definition and etymology response as it is usually teh most commonly used term
             var newDefinitionInfo = wordApiResponse.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]
             
-
             var newEtymologyInfo = wordApiResponse.results[0].lexicalEntries[0].entries[0].etymologies
-
             let newWord = wordApiResponse.results[0].word;
             console.log(wordApiResponse)
             // console.log(newEtymologyInfo)
-
             self.setState({
                 definition: newDefinitionInfo,
                 etymology: newEtymologyInfo,
                 word: newWord
             })
         })
-
-
     }"
-
     //creating quiz, generating random questions
     "class Quiz extends Component {
     constructor(props) {
@@ -143,7 +123,6 @@ Code Examples
         this.getRandomQuestionNumber = this.getRandomQuestionNumber.bind(this);
         scoreDisplay = "";
     }
-
     getRandomQuestionNumber() {
             var i = 0;
             var questionNumber = Math.floor(Math.random() * Data.questions.length);
@@ -161,5 +140,3 @@ Code Examples
                 return questionNumber;
             }
     }"
-
-
