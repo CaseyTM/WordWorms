@@ -172,3 +172,52 @@ nav img{
   text-align: left;
   font-weight: 300;
 }
+
+
+/* //styling for the worm */
+
+img{
+  height: 200px;
+  width: auto;
+  /* border: 1px solid black; */
+}
+
+/* a class that creates margin above */
+
+/* Home page styling */
+
+.margin-above{
+  margin-top: 70px;
+}
+
+.orange{
+  color: #EE9C5D;
+}
+
+.well{
+  /* background-color: #d0e1ed; */
+  background-color: #dae5ed;
+  border-radius: 20px;
+
+}
+
+/* scoring styling below */
+
+.low-score{
+  color: red;
+}
+
+
+.medium-score{
+  color: gold;
+}
+
+.high-score{
+  color: green;
+}
+
+.form-control.width-shrink{
+  background-color: #dae5ed;
+  width: 10vw;
+
+}

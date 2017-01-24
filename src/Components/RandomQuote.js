@@ -6,8 +6,9 @@ class RandomQuote extends Component {
 
 	render() {
 		return (
-				<div className="col-sm-9">
-					<h1 className="searchWord well">{fullQuote}</h1>
+				<div className="col-sm-9 well margin-above">
+					<h1 className="wod">Quote of the Day: </h1>
+					<h1 className="searchWord"><em>{fullQuote}</em></h1>
 				</div>
 		)
 	}
@@ -52,4 +53,4 @@ quotes.push(new Quote("I'm sorry, if you were right, I'd agree with you.", "Robi
 
 
 var randIndex = Math.floor(Math.random()*quotes.length)
-var fullQuote = quotes[randIndex].quote + " ~ " + quotes[randIndex].author;
+var fullQuote = '"' + quotes[randIndex].quote + '"' + " ~ " + quotes[randIndex].author;

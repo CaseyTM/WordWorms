@@ -49,8 +49,9 @@ class QuizMe extends Component {
 			<div className="col-sm-9">
 				<h1>Please select a quiz option.</h1>
 					<Link to="randomQuiz"><button className="btn btn-success random-quiz-option">Generate Random Quiz</button></Link>
-					{this.props.children}
 					{linksArray}
+					{this.props.children}
+					
 
 			</div>
 		)

@@ -5,7 +5,7 @@ class WordOfTheDay extends Component {
 	render() {
 		return (
 				<div className="col-sm-9">
-					<h1 className="wod">Today's word is: {wordForToday.word} </h1>
+					<h1 className="wod">Today's word is: <span className="orange">{wordForToday.word}</span> </h1>
 					<h2 className="wod">Definition: {wordForToday.definition} </h2>
 					<h3 className="wod">Etymology: {wordForToday.etymology} </h3>
 				</div>
