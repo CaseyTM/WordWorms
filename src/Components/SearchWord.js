@@ -24,7 +24,7 @@ class SearchWord extends Component{
 		console.log(nextProps);
 		var word = nextProps.params.id;
 
-		var url = "http://wasjustthinking.com:5000/?word="+word;
+		var url = "http://ec2-54-218-208-100.us-west-2.compute.amazonaws.com:5000/?word="+word;
 		var self = this;
 
 
@@ -55,7 +55,7 @@ class SearchWord extends Component{
 
 	componentDidMount() {
 		var word = this.props.params.id;
-		var url = "http://wasjustthinking.com:5000/?word="+word
+		var url = "http://ec2-54-218-208-100.us-west-2.compute.amazonaws.com:5000/?word="+word
 		var self = this
 
 
@@ -97,17 +97,15 @@ class SearchWord extends Component{
 
 		return(
 			<div className="col-xs-12">
-				<h1 className="searchWord"> Word: </h1>
-				<p>{this.state.word} </p>
+				<h1 className="searchWord bold-text"> Word: </h1>
+				<p className="well">{this.state.word} </p>
 
-				<h1 className="searchWord">Definition: </h1>
-				<p>{this.state.definition} </p>
+				<h1 className="searchWord bold-text">Definition: </h1>
+				<p className="well">{this.state.definition} </p>
 
-				<h1 className="searchWord"> Etymology: </h1>
-				<p>{this.state.etymology} </p>
+				<h1 className="searchWord bold-text"> Etymology: </h1>
+				<p className="well">{this.state.etymology} </p>
 
-
-				<button onClick={this.addWordToList} className="btn btn-success">Add This Word To One of my Lists </button>
 
 			</div>
 		)
