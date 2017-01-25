@@ -39,33 +39,24 @@ MVP
 	Routing for each section.
 
 Our Stretch Goals 
-<<<<<<< HEAD
+
 	Give the user the ability to Build their own quiz structure.
 	Implement Redux 
 
-=======
+
 	Game
 	Quizzes generated on custom lists
->>>>>>> master
+
 
 Authors
 	Rishi Karri
 	Elizabeth Gulsby
 	Casey McCaskill
-<<<<<<< HEAD
 	Jonathan Townsend
-=======
-	JT Townsend
->>>>>>> master
 
 Screen shots
 	(attached)
 
-<<<<<<< HEAD
 Github Link "https://github.com/CaseyTM/WordWorms"
-=======
-Github
-	https://github.com/CaseyTM/WordWorms
->>>>>>> master
 
 Code Example
